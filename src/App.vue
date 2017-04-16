@@ -12,7 +12,7 @@
             <h1>Weight History</h1>
             <ul>
                 <li v-for="w in weights">
-                    <span>{{ w.value }}</span><span> - </span><span>{{ w.created | date }}</span>
+                    <span>{{ w.value }}</span><span> - </span><span>{{ w.created | date }}</span><span><button @click="remove(w)">remove</button></span>
                 </li>
             </ul>
         </div>
@@ -46,6 +46,9 @@
         methods: {
             addWeight () {
                 this.$store.dispatch('persistWeight');
+            },
+            remove (weight) {
+                this.$store.dispatch('removeWeight', weight);
             }
         }
     }

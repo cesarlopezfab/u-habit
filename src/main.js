@@ -56,10 +56,15 @@ const store = new Vuex.Store({
                 value: context.state.weight,
                 created: date
             }).then(function() {
-                context.dispatch('reset');
+                context.commit('reset');
                 context.dispatch('retrieveWeights');
             });
 
+        },
+        removeWeight (context, weight) {
+            axios.delete('/api/weights/' + weight.id, {data: weight}).then(function() {
+                context.dispatch('retrieveWeights');
+            });
         },
         retrieveWeights (context) {
             axios.get('/api/weights').then(function(response) {
