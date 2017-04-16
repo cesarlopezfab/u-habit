@@ -1,0 +1,27 @@
+{
+  "name": "u-habit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/cesarlopezfab/u-habit.git",
+  "author": "cesarlopezfa <cesarlopezfa@gmail.com>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-latest": "^6.24.1",
+    "cross-env": "^4.0.0",
+    "file-loader": "^0.11.1",
+    "moment": "^2.18.1",
+    "vue": "^2.2.6",
+    "vue-loader": "^11.3.4",
+    "vue-template-compiler": "^2.2.6",
+    "vuex": "^2.3.0",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
