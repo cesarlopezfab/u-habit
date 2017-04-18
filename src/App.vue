@@ -1,6 +1,9 @@
 <template>
     <div id="app">
-
+        <div>
+            <button class="btn-login" @click="login">Login</button>
+            <h2>Welcome <span id="nick" class="nickname"></span></h2>
+        </div>
         <div>
             <label>Add your weight</label>
             <input type="number" placeholder="U Weight" v-model="weight">
@@ -49,6 +52,9 @@
             },
             remove (weight) {
                 this.$store.dispatch('removeWeight', weight);
+            },
+            login () {
+              this.$store.dispatch('login');
             }
         }
     }
