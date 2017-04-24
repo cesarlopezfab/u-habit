@@ -73,6 +73,9 @@ const store = new Vuex.Store({
         retrieveWeights (context) {
             axios.get('/api/weights').then(function (response) {
                 context.commit('updateWeights', response.data);
+            }).catch(function() {
+                // FIXME: check if really want to do this
+                context.commit('updateWeights', []);
             });
         },
         loggedIn (context, payload) {
@@ -87,11 +90,14 @@ const store = new Vuex.Store({
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + payload.accessToken;
 
             context.commit('user', payload.profile);
+            context.dispatch('retrieveWeights');
         },
         logout(context) {
             localStorage.removeItem('accessToken');
             localStorage.removeItem('profile');
+            axios.defaults.headers.common['Authorization'] = undefined;
             context.commit('user', undefined);
+            context.dispatch('retrieveWeights');
         }
     }
 });
