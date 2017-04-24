@@ -6,7 +6,7 @@
   "author": "cesarlopezfa <cesarlopezfa@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "babel-loader": "^6.4.1",
     "babel-preset-latest": "^6.24.1",
     "cross-env": "^4.0.0",
+    "css-loader": "^0.28.0",
     "file-loader": "^0.11.1",
     "moment": "^2.18.1",
     "vue": "^2.2.6",

@@ -1,9 +1,6 @@
 <template>
     <div id="app">
-        <div>
-            <button class="btn-login" @click="login">Login</button>
-            <h2>Welcome <span id="nick" class="nickname"></span></h2>
-        </div>
+        <authentication></authentication>
         <div>
             <label>Add your weight</label>
             <input type="number" placeholder="U Weight" v-model="weight">
@@ -23,6 +20,7 @@
 </template>
 
 <script>
+    import Authentication from './Authentication.vue';
     export default {
         name: 'app',
         computed: {
@@ -56,6 +54,9 @@
             login () {
               this.$store.dispatch('login');
             }
+        },
+        components: {
+            Authentication
         }
     }
 </script>
