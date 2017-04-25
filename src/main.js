@@ -1,15 +1,20 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Buefy from 'buefy';
+import 'buefy/lib/buefy.css';
 import App from './App.vue';
 import axios from 'axios';
 import moment from 'moment';
 
 
 Vue.use(Vuex);
+Vue.use(Buefy);
 
 Vue.filter('date', function (value) {
     return moment(value).format('DD/MM/YYYY');
 });
+
+const toaster = new Vue();
 
 const store = new Vuex.Store({
     state: {
@@ -61,12 +66,14 @@ const store = new Vuex.Store({
                 created: date
             }).then(function () {
                 context.commit('reset');
+                toaster.$toast.open('Weight registered');
                 context.dispatch('retrieveWeights');
             });
 
         },
         removeWeight (context, weight) {
             axios.delete('/api/weights/' + weight.id, {data: weight}).then(function () {
+                toaster.$toast.open('Weight removed');
                 context.dispatch('retrieveWeights');
             });
         },

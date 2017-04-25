@@ -1,7 +1,7 @@
 <template>
     <div>
-        <button @click="login()" v-show="!authenticated">Login</button>
-        <button @click="logout()" v-show="authenticated">Logout</button>
+        <button class="button is-primary" @click="login()" v-show="!authenticated">Login</button>
+        <button class="button is-info" @click="logout()" v-show="authenticated">Logout</button>
     </div>
 </template>
 

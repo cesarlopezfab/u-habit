@@ -7,7 +7,9 @@
   "license": "Apache-2.0",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "postbuild": "cp index.html ../weight-u/src/main/resources/static/ && cp dist/build.js ../weight-u/src/main/resources/static/dist/ && cp dist/build.js.map ../weight-u/src/main/resources/static/dist/"
+
   },
   "dependencies": {
     "auth0-lock": "^10.14.0",
@@ -15,10 +17,12 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-latest": "^6.24.1",
+    "buefy": "^0.2.1",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "file-loader": "^0.11.1",
     "moment": "^2.18.1",
+    "style-loader": "^0.16.1",
     "vue": "^2.2.6",
     "vue-loader": "^11.3.4",
     "vue-template-compiler": "^2.2.6",

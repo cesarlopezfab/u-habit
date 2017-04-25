@@ -1,18 +1,25 @@
 <template>
-    <div id="app">
+    <div id="app" class="content">
         <authentication></authentication>
-        <div>
-            <label>Add your weight</label>
-            <input type="number" placeholder="U Weight" v-model="weight">
-            <input type="text" placeholder="dd/mm/yyyy (optional)" v-model="created">
-            <button @click="addWeight">Add</button>
+        <div class="columns">
+            <b-field class="column" label="Add your weight">
+                <b-input v-model="weight"></b-input>
+            </b-field>
+            <b-field class="column" label="Date (optional)">
+                <b-input placeholder="dd/mm/yyyy" v-model="created"></b-input>
+            </b-field>
+
+            <button class="control column button is-primary" @click="addWeight">Add</button>
         </div>
 
         <div>
-            <h1>Weight History</h1>
+            <h2>Weight History</h2>
             <ul>
-                <li v-for="w in weights">
-                    <span>{{ w.value }}</span><span> - </span><span>{{ w.created | date }}</span><span><button @click="remove(w)">remove</button></span>
+                <li class="tile" v-for="w in weights">
+                    <div class="card">
+                        <span class="tag">{{ w.value }} - {{ w.created | date }}<button class="delete is-small" @click="remove(w)"></button></span>
+                    </div>
+
                 </li>
             </ul>
         </div>
@@ -45,6 +52,9 @@
             }
         },
         methods: {
+            toast() {
+                this.$toast.open('Something happened')
+            },
             addWeight () {
                 this.$store.dispatch('persistWeight');
             },
@@ -52,7 +62,7 @@
                 this.$store.dispatch('removeWeight', weight);
             },
             login () {
-              this.$store.dispatch('login');
+                this.$store.dispatch('login');
             }
         },
         components: {
@@ -61,7 +71,9 @@
     }
 </script>
 
-<style{{#sass}} lang="scss"{{/sass}}>
+<style{{#
+sass}} lang="scss"{{/
+sass}}>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
