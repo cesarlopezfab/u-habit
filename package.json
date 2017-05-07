@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "postbuild": "cp index.html ../weight-u/src/main/resources/static/ && cp dist/build.js ../weight-u/src/main/resources/static/dist/ && cp dist/build.js.map ../weight-u/src/main/resources/static/dist/"
+    "xxpostbuild": "cp index.html ../weight-u/src/main/resources/static/ && cp dist/build.js ../weight-u/src/main/resources/static/dist/ && cp dist/build.js.map ../weight-u/src/main/resources/static/dist/"
 
   },
   "dependencies": {
