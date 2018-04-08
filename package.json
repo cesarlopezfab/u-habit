@@ -9,7 +9,6 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "xxpostbuild": "cp index.html ../weight-u/src/main/resources/static/ && cp dist/build.js ../weight-u/src/main/resources/static/dist/ && cp dist/build.js.map ../weight-u/src/main/resources/static/dist/"
-
   },
   "dependencies": {
     "auth0-lock": "^10.14.0",
@@ -28,6 +27,6 @@
     "vue-template-compiler": "^2.2.6",
     "vuex": "^2.3.0",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^3.1.2"
   }
 }
