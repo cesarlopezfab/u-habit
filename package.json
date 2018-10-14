@@ -12,7 +12,7 @@
 
   },
   "dependencies": {
-    "auth0-lock": "^10.14.0",
+    "auth0-lock": "^10.24.2",
     "axios": "^0.16.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
@@ -21,13 +21,13 @@
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "file-loader": "^0.11.1",
-    "moment": "^2.18.1",
+    "moment": "^2.19.3",
     "style-loader": "^0.16.1",
-    "vue": "^2.2.6",
+    "vue": "^2.5.17",
     "vue-loader": "^11.3.4",
     "vue-template-compiler": "^2.2.6",
     "vuex": "^2.3.0",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.10.0"
   }
 }
