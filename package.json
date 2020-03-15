@@ -15,7 +15,7 @@
     "auth0-lock": "^10.14.0",
     "axios": "^0.16.1",
     "babel-core": "^6.24.1",
-    "babel-loader": "^6.4.1",
+    "babel-loader": "^7.1.0",
     "babel-preset-latest": "^6.24.1",
     "buefy": "^0.2.1",
     "cross-env": "^4.0.0",
